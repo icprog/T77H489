@@ -1,0 +1,3 @@
+2014-01-08
+	1. disable wifi after throughput test in FT station;
+	2. modify two functions to cancel warning while build;
