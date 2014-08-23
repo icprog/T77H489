@@ -60,6 +60,8 @@
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <EmbedManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</EmbedManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
@@ -85,7 +87,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>Ws2_32.lib;GPIB-32.obj;PTSC.lib;GetAdapterInfo.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)U12H270.exe</OutputFile>
+      <OutputFile>$(OutDir)T77H489.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -114,7 +116,7 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>Ws2_32.lib;GPIB-32.obj;PTSC.lib;GetAdapterInfo.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)M30H004.exe</OutputFile>
+      <OutputFile>$(OutDir)T77H489.exe</OutputFile>
       <Version>
       </Version>
       <GenerateDebugInformation>true</GenerateDebugInformation>

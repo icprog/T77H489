@@ -139,6 +139,8 @@ protected:
 		
 		/*ThroughPut*/
 		int			  nTestThroughput; //for mice
+		int			  nTest2GThroughput; //Fa-Hong add
+		int			  nTest5GThroughput; //Fa-Hong add
 		int			  GnTestThroughput; //for mice
 		char		  nMiceAppVer[MINBUFSIZE]; //for mice
 		char		  nMiceCfeVer[MINBUFSIZE]; //for mice
@@ -146,30 +148,32 @@ protected:
 
 		int			  nGoldenSeverFlag;
 		int			  nRetryNum;
-		int           nTXThroughputSpec;
-		int           nRXThroughputSpec;
-		int           nTXRXThroughputSpec;
+
+		int           nTXThroughputSpec2G;
+		int           nRXThroughputSpec2G;
+		int           nTXRXThroughputSpec2G;
 		int           nTXThroughputSpec5G;
 		int           nRXThroughputSpec5G;
 		int           nTXRXThroughputSpec5G;
 
-		int           nTXThroughputSpecHigt;
-		int           nRXThroughputSpecHigt;
-		int           nTXRXThroughputSpecHigt;
+
+		int           nTXThroughputSpecHigt2G;
+		int           nRXThroughputSpecHigt2G;
+		int           nTXRXThroughputSpecHigt2G;
 		int           nTXThroughputSpecHigt5G;
 		int           nRXThroughputSpecHigt5G;
 		int           nTXRXThroughputSpecHigt5G;
 
-		int           nTXThroughputSpec_2;
-		int           nRXThroughputSpec_2;
-		int           nTXRXThroughputSpec_2;
+		int           nTXThroughputSpec2G_2;
+		int           nRXThroughputSpec2G_2;
+		int           nTXRXThroughputSpec2G_2;
 		int           nTXThroughputSpec5G_2;
 		int           nRXThroughputSpec5G_2;
 		int           nTXRXThroughputSpec5G_2;
 
-		int           nTXThroughputSpecHigt_2;
-		int           nRXThroughputSpecHigt_2;
-		int           nTXRXThroughputSpecHigt_2;
+		int           nTXThroughputSpecHigt2G_2;
+		int           nRXThroughputSpecHigt2G_2;
+		int           nTXRXThroughputSpecHigt2G_2;
 		int           nTXThroughputSpecHigt5G_2;
 		int           nRXThroughputSpecHigt5G_2;
 		int           nTXRXThroughputSpecHigt5G_2;
@@ -185,18 +189,18 @@ protected:
 		char		  sz2GThrotghputGoldenIP[MINBUFSIZE];
 		char		  sz5GThrotghputGoldenIP[MINBUFSIZE];
 
-		int			nTXThroughputSpec_Factroy;
-		int			nRXThroughputSpec_Factroy;
-		int			nTXRXThroughputSpec_Factroy;
+		int			nTXThroughputSpec2G_Factroy;
+		int			nRXThroughputSpec2G_Factroy;
+		int			nTXRXThroughputSpec2G_Factroy;
 
 		int			nTXThroughputSpec5G_Factroy;
 		int			nRXThroughputSpec5G_Factroy;
 		int			nTXRXThroughputSpec5G_Factroy;
 
-		int			nThroughputFalg_Factroy;
+		int			nThroughputFalg2G_Factroy;
 		int			nThroughputFalg5G_Factroy;
 
-		int			nThroughputRange_Factroy;
+		int			nThroughputRange2G_Factroy;
 		int			nThroughputRange5G_Factroy;
 		/*End*/
 		int           MURssiSpec;  //2010.10.6
@@ -276,6 +280,9 @@ protected:
 
 		/*for MICE*/
 		char szPNNAME[MINBUFSIZE]; //for check PNNAME
+
+		//Fa-Hong add 20140822 for check power meter
+		int iPowerMeterTestFlag; //for check PNNAME
 		/*end*/
 
 	}Iniinfo,*pIniinfo;
@@ -420,7 +427,7 @@ public:
 public:
 	void	GetLockCode(char* pIMEI, char* pLockCode); 
 public:
-	bool    RunTelnetExe(char* GetMacValue);
+	bool    RunTelnetenableExe(char* GetMacValue);
 public:
 	bool    PingSpecifyIP(char* IP,HANDLE &handle,HANDLE &hReadPipe,HANDLE &hWritePipe);
 public:
@@ -563,7 +570,7 @@ public:
 	int DutTestWiFiThroughput_1(void);
 	int DutTestWiFiThroughput_2(void);
 	int     Check5GThroughputTest();
-	int     CheckThroughputTest();
+	int     Check2GThroughputTest();
 	void    PreSetting();
 	void	AfterSetting();
 public:
@@ -740,6 +747,7 @@ public:
 	bool DutPerPT(void);
 public:
 	void GetMatchString(CString str_info, CString str_before, CString str_after, CString & str_match);
+	bool RunTelnetenableExe(char* IPAddress, char* MacValue);
 
 //add for LED
 public:	
@@ -755,6 +763,8 @@ public:
 	int  JudgeColor(char *szBuf);
 	int  iLedCCDTestByGroup(int iGroup);
 	int	 RunOneProcess(char *pCommandLine);
+
+	bool PowerMeterTest(int iFlag);
 //end
 };
 
