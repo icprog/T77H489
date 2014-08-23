@@ -71,18 +71,13 @@ V1.0.1.0		2012/12/25
 MICE_1.0.0		2013/10/19
 		1.modify program to test MICE(M30H003.00 & M30H004.00)
 		2.initial version
-
-V1.0.2.0		2014/8/22
-		1.modify program to test T77H489
-		2.initial version
-
 */
 
 #pragma once
 
-#define DIALOGUE_VERSION		"V1.0.2.0"
-#define PRODUCT_NAME			"T77H489"
-#define PROGRAM_TIME			"2014/8/22"
+#define DIALOGUE_VERSION		"MICE_1.0.0"
+#define PRODUCT_NAME			"M30H003/4"
+#define PROGRAM_TIME			"2013/10/19"
 
 class CMainFrame : public CFrameWnd
 {
